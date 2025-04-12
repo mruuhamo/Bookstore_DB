@@ -17,14 +17,18 @@ This Python program acts as a bookstore application that manages a database of b
 
 
 ## Usage
-1. **Run the program**:
+1. **Running the program**:
     ```bash
     python bookstore.py <filename>
     ```
     Replace `<filename>` with the name of your input file.
     Program comes with two sample databases, Library_1.txt and Library_2.txt
+    To use example databases, input f.ex
+    ```bash
+    python .\Library_db.py .\Library_1.txt
+    ```
 
-2. **Program Options**:
+3. **Program Options**:
     - **Add a new book**: Enter book details and choose whether to update the database.
     - **Print current database content**: Display all books in the database file that was inputted.
     - **Exit**: Exit the application.
@@ -35,6 +39,3 @@ The input file should contain rows of book information separated by double under
 - Writer Name
 - ISBN
 - Publishing Year
-
-### Running the program:
-> python .\Library_db.py .\Library_1.txt
