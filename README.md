@@ -19,13 +19,13 @@ This Python program acts as a bookstore application that manages a database of b
 ## Usage
 1. **Running the program**:
     ```bash
-    python bookstore.py <filename>
+    python Library_db.py <filename>
     ```
     Replace `<filename>` with the name of your input file.
     Program comes with two sample databases, Library_1.txt and Library_2.txt
     To use example databases, input f.ex
     ```bash
-    python .\Library_db.py .\Library_1.txt
+    python Library_db.py Library_1.txt
     ```
 
 3. **Program Options**:
