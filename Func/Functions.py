@@ -54,7 +54,14 @@ def add_book(books):
     try:
         name = input("\nEnter the book's name: ")
         writer = input("Enter the writer's name: ")
-        isbn = input("Enter the book's ISBN: ")
+
+        # Check that ISBN given is numbers
+        while True:
+            isbn = input("Enter the book's ISBN: ")
+            if isbn.isdigit():
+                break
+            else:
+                print("Invalid ISBN. Please enter only numbers.")
         
         # Check for duplicate ISBN, and if user wants to update book details or terminate transaction
         for book in books:
