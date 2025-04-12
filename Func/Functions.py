@@ -1,9 +1,7 @@
 """
-Function library for the Database app with Library input/output
+Function library file for the Database app
 
 Done for self
-
-App takes in file as an argument when launcing.
 
 """
 
