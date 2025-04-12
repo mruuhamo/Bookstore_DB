@@ -1,9 +1,9 @@
 """
-Database app with Library input/output
+Database app with Library input
 
 Done for self
 
-App takes in file as an argument when launcing.
+App takes in file as an argument when launcing, and handles if input file is not given or correct
 
 """
 
