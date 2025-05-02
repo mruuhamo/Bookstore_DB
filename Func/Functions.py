@@ -4,6 +4,8 @@ Function library file for the Database app
 Done for self
 
 """
+import datetime
+import isbnlib
 
 # Load books -function that loads the data in the inputted file to the database
 # If the input file is empty, noting that it starts with empty database
@@ -52,16 +54,18 @@ def save_books(filename, books):
 # First asks the new book inputs, and then prompts if inputs are correct and they should be saved to the database
 def add_book(books):
     try:
+        current_year = datetime.datetime.now().year
         name = input("\nEnter the book's name: ")
         writer = input("Enter the writer's name: ")
 
-        # Check that ISBN given is numbers
+        # Check that ISBN given is valid
         while True:
             isbn = input("Enter the book's ISBN: ")
-            if isbn.isdigit():
+            if isbnlib.is_isbn13(isbn):
+                print(f"{isbn} is a valid ISBN-13.")
                 break
             else:
-                print("Invalid ISBN. Please enter only numbers.")
+                print("Invalid ISBN. Please enter a valid ISBN.")
         
         # Check for duplicate ISBN, and if user wants to update book details or terminate transaction
         for book in books:
@@ -75,7 +79,7 @@ def add_book(books):
                         while True:
                             try:
                                 year = int(input("Enter the publishing year: "))
-                                if year > 0 and year <= 2025:
+                                if year > 0 and year <= current_year:
                                     book['year'] = year
                                     break
                                 else:
@@ -94,7 +98,7 @@ def add_book(books):
         while True:
             try:
                 year = int(input("Enter the publishing year: "))
-                if year > 0 and year <= 2025:
+                if year > 0 and year <= current_year:
                     break
                 else:
                     print("Invalid year. Please enter a positive integer not greater than 2025.")
